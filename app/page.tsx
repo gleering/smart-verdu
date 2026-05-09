@@ -1,9 +1,13 @@
+import CartSidebar from "../components/CartSidebar";
+import Header from "../components/Header";
 import ProductCard from "../components/ProductCard";
 import { products } from "../data/products";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#f5f5f5]">
+      <Header />
+      <CartSidebar />
       <section className="bg-green-700 text-white px-6 py-16">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-bold leading-tight">
