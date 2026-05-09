@@ -1,8 +1,9 @@
 "use client";
 
 import { useCart } from "../context/CartContext";
+import Image from "next/image";
 
-const WHATSAPP_PHONE = "5490000000000";
+const WHATSAPP_PHONE = "5492477270064";
 
 export default function CartSidebar() {
     const { cart, addToCart, removeFromCart } = useCart();
@@ -40,10 +41,12 @@ export default function CartSidebar() {
                         className="border rounded-xl p-4"
                     >
                         <div className="flex items-center gap-4">
-                            <img
+                            <Image
                                 src={item.image}
                                 alt={item.name}
-                                className="w-16 h-16 rounded-lg object-cover"
+                                width={64}
+                                height={64}
+                                className="rounded-lg object-cover"
                             />
 
                             <div className="flex-1">

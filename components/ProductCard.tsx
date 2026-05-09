@@ -1,6 +1,7 @@
 "use client";
 import { useCart } from "../context/CartContext";
 import { Product } from "../types/product";
+import Image from "next/image";
 
 interface Props {
     product: Product;
@@ -11,11 +12,15 @@ export default function ProductCard({ product }: Props) {
 
     return (
         <div className="bg-white rounded-2xl overflow-hidden shadow-md">
-            <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-52 object-cover"
-            />
+            <div className="relative h-52 w-full">
+                <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+            </div>
 
             <div className="p-4">
                 <span className="text-sm text-green-600">{product.category}</span>
